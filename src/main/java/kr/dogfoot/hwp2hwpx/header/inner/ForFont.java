@@ -22,7 +22,7 @@ public class ForFont {
         }
 
         if (hwpFaceName.getProperty().hasSubstituteFont()) {
-            font.substFont();
+            font.createSubstFont();
             substFont(font.substFont(), hwpFaceName);
         }
     }
