@@ -6,6 +6,7 @@ import kr.dogfoot.hwplib.object.docinfo.facename.FontTypeInfo;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.FontFamilyType;
 import kr.dogfoot.hwpxlib.object.content.header_xml.enumtype.FontType;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.fontface.Font;
+import kr.dogfoot.hwpxlib.object.content.header_xml.references.fontface.SubstFont;
 import kr.dogfoot.hwpxlib.object.content.header_xml.references.fontface.TypeInfo;
 
 public class ForFont {
@@ -21,7 +22,8 @@ public class ForFont {
         }
 
         if (hwpFaceName.getProperty().hasSubstituteFont()) {
-            // TODO: 대체폰트 정보
+            font.substFont();
+            substFont(font.substFont(), hwpFaceName);
         }
     }
 
@@ -73,4 +75,11 @@ public class ForFont {
         }
     }
 
+    private static void substFont(SubstFont substFont, FaceName hwpFaceName) {
+        substFont
+                .faceAnd(hwpFaceName.getSubstituteFontName())
+                .typeAnd(fontType(hwpFaceName.getSubstituteFontType()))
+                .isEmbeddedAnd(false)
+                .binaryItemIDRefAnd("");
+    }
 }
