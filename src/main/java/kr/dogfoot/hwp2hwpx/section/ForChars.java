@@ -111,13 +111,8 @@ public class ForChars extends Converter {
     private void normal(HWPCharNormal hwpChar) {
         startT();
 
-        try {
-            textBuffer.append(hwpChar.getCh());
-        } catch (UnsupportedEncodingException e) {
-            throw new RuntimeException(e);
-        }
+        textBuffer.append((char) hwpChar.getCode());
     }
-
 
     private void charControl(HWPCharControlChar hwpChar) {
         switch (hwpChar.getCode()) {
