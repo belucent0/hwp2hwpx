@@ -15,7 +15,6 @@ import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.Para;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.Run;
 import kr.dogfoot.hwpxlib.object.content.section_xml.paragraph.T;
 
-import java.io.UnsupportedEncodingException;
 
 public class ForChars extends Converter {
     private Para para;
@@ -24,20 +23,20 @@ public class ForChars extends Converter {
     int runCount;
     int runIndex;
     private Run currentRun;
-    private StringBuilder textBuffer;
+    private final StringBuilder textBuffer;
     private T currentT;
 
-    private ForInlineControl inlineControlConverter;
-    private ForFieldBegin fieldBeginConverter;
-    private ForTable tableConverter;
-    private ForGso gsoConverter;
-    private ForEquation equationConverter;
-    private ForSecPr secPrConverter;
-    private ForHeader headerConverter;
-    private ForFooter footerConverter;
-    private ForFootnote footnoteConverter;
-    private ForEndnote endnoteConverter;
-    private ForForm formConverter;
+    private final ForInlineControl inlineControlConverter;
+    private final ForFieldBegin fieldBeginConverter;
+    private final ForTable tableConverter;
+    private final ForGso gsoConverter;
+    private final ForEquation equationConverter;
+    private final ForSecPr secPrConverter;
+    private final ForHeader headerConverter;
+    private final ForFooter footerConverter;
+    private final ForFootnote footnoteConverter;
+    private final ForEndnote endnoteConverter;
+    private final ForForm formConverter;
 
     public ForChars(Parameter parameter) {
         super(parameter);
