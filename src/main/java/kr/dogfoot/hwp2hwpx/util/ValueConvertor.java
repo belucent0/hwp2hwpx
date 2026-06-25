@@ -35,9 +35,9 @@ public class ValueConvertor {
             case Solid:
                 return LineType2.SOLID;
             case Dash:
-                return LineType2.DASH;
+                return LineType2.DOT;   // hwplib byte2 = 실제 DOT(hwpx 포맷 오류)
             case Dot:
-                return LineType2.DOT;
+                return LineType2.DASH;  // hwplib byte3 = 실제 DASH(hwpx 포맷 오류)
             case DashDot:
                 return LineType2.DASH_DOT;
             case DashDotDot:
